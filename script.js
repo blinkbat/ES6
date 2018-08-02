@@ -45,6 +45,10 @@ driversLicenseES5(true);
 
 function driversLicenseES6(passedTest) {
 
+	// throws actual err instead of undefined
+	// var is hoisted but lives in "dead zone" before declaration
+	console.log(firstName);
+
 	const yearOfBirth = '1990';
 	let firstName = 'Joe';
 
@@ -64,9 +68,16 @@ driversLicenseES6(true);
 
 
 
+let i = 23;
 
+for (let i = 0; i < 5; i++) {
+	console.log(i);
+}
 
-
+// another example of block scope
+// this i value is unchanged by the for loop
+// if var was used instead, i would be mutated
+console.log(i);
 
 
 
