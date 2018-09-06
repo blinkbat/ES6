@@ -660,12 +660,12 @@ AthleteES5.prototype.wonMedal = function() {
 
 }
 
-var johnAthleteES5 = new AthleteES5("John", 1989, "Swimmer", 3, 10);
+var johnAthleteES5 = new AthleteES5("John", 1990, "Swimmer", 3, 10);
 
 johnAthleteES5.calculateAge();
 johnAthleteES5.wonMedal();
-johnAthleteES5.wonMedal();
-johnAthleteES5.wonMedal();
+//johnAthleteES5.wonMedal();
+//johnAthleteES5.wonMedal();
 
 var john5 = new PersonES5("John", 1990, "Teacher");
 
@@ -687,7 +687,7 @@ class Person {
 
 	calculateAge() {
 
-		var age = new Date().getFullYear - this.yearOfBirth;
+		var age = new Date().getFullYear() - this.yearOfBirth;
 
 		console.log(age);
 
@@ -702,9 +702,23 @@ class Athlete extends Person {
 	constructor(name, yearOfBirth, job, olympicGames, medals) {
 		// super() calls super class, ie parent class
 		super(name, yearOfBirth, job);
+
+		this.olympicGames = olympicGames;
+		this.medals = medals;
+
+	}
+
+	wonMedal() {
+		this.medals++;
+		console.log(this.medals);
 	}
 
 }
+
+const johnAthleteES6 = new Athlete('John', 1990, 'swimmer', 3, 10);
+
+johnAthleteES6.wonMedal();
+johnAthleteES6.calculateAge();
 
 
 
