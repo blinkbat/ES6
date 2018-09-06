@@ -18,6 +18,8 @@ HINT: Use some of the ES6 features: classes, subclasses, template strings, defau
 */
 
 
+// classes
+
 // construct common class
 class Element {
 
@@ -78,6 +80,7 @@ class Street extends Element {
 }
 
 
+// objects (well, arrays)
 
 const parks 	= [
 	// name, year, area, treeCount
@@ -87,7 +90,7 @@ const parks 	= [
 ];
 
 const streets = [
-	// name, year, length
+	// name, year, length, classification
 	new Street("Lincoln", 1907, 20, 2),
 	new Street("Kennedy", 1982, 35, 3),
 	new Street("King", 1992, 65, 4),
@@ -98,28 +101,31 @@ const streets = [
 console.log(parks);
 console.log(streets);
 
-
+// functions
 
 function treeDensity() {
 	parks.forEach( function(park) {
-		let treeCount = park.treeCount;
-		let area = park.area;
-		let name = park.name;
+		const treeCount = park.treeCount;
+		const area = park.area;
+		const name = park.name;
 		console.log(`The tree density of ${name} is ${area / treeCount}.`);
 	});
 }
 
 
+
 function findTrees() {
-		parks.forEach( function(park) {
-		let treeCount = park.treeCount;
-		let name = park.name;
+	parks.forEach( function(park) {
+		const treeCount = park.treeCount;
+		const name = park.name;
 
 		if (treeCount > 1000) {
 			console.log(`The tree count of ${name} is over 1000 (${treeCount}).`);
 		}
 	});
 }
+
+
 
 function streetInfo() {
 
@@ -129,7 +135,7 @@ function streetInfo() {
 
 	streets.forEach( function(street) {
 
-		let length = street.length;
+		const length = street.length;
 
 		if (length !== undefined) {	
 			totalLength += length;
@@ -146,6 +152,7 @@ function streetInfo() {
 }
 
 
+
 function streetClasses() {
 	streets.forEach( function(street) {
 
@@ -153,6 +160,7 @@ function streetClasses() {
 
 	});
 }
+
 
 
 function averageParkAge() {
@@ -164,9 +172,9 @@ function averageParkAge() {
 
 	parks.forEach( function(park) {
 
-		let name = park.name;
-		let year = park.year;
-		let age = new Date().getFullYear() - year;
+		const name = park.name;
+		const year = park.year;
+		const age = new Date().getFullYear() - year;
 
 		console.log(`${name} park is ${age} years old.`);
 
@@ -177,7 +185,6 @@ function averageParkAge() {
 
 	let averageAge = totalAge / parkCount;
 	console.log(`The average age of all parks is ${averageAge}.`);
-
 
 }
 
