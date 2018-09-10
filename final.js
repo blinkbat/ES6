@@ -18,6 +18,7 @@ HINT: Use some of the ES6 features: classes, subclasses, template strings, defau
 */
 
 
+
 // classes
 
 // construct common class
@@ -101,10 +102,13 @@ const streets = [
 console.log(parks);
 console.log(streets);
 
+
+
+
 // functions
 
 function treeDensity() {
-	parks.forEach( function(park) {
+	parks.forEach(park => {
 		const treeCount = park.treeCount;
 		const area = park.area;
 		const name = park.name;
@@ -115,7 +119,7 @@ function treeDensity() {
 
 
 function findTrees() {
-	parks.forEach( function(park) {
+	parks.forEach(park => {
 		const treeCount = park.treeCount;
 		const name = park.name;
 
@@ -133,7 +137,7 @@ function streetInfo() {
 	let averageLength = 0;
 	const streetCount = streets.length;
 
-	streets.forEach( function(street) {
+	streets.forEach(street => {
 
 		const length = street.length;
 
@@ -154,7 +158,7 @@ function streetInfo() {
 
 
 function streetClasses() {
-	streets.forEach( function(street) {
+	streets.forEach(street => {
 
 		street.streetClass();
 
@@ -170,7 +174,7 @@ function averageParkAge() {
 
 	console.log(`The amount of parks is ${parkCount}.`);
 
-	parks.forEach( function(park) {
+	parks.forEach(park => {
 
 		const name = park.name;
 		const year = park.year;
