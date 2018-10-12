@@ -56,6 +56,7 @@ class Park extends Element {
 
 
 class Street extends Element {
+	// shorthand for size here sets default val
 	constructor(name, year, length, size = 3) {
 
 		super(name, year);
@@ -178,6 +179,7 @@ function averageParkAge() {
 
 		const name = park.name;
 		const year = park.year;
+		// making use of built-in Date() method
 		const age = new Date().getFullYear() - year;
 
 		console.log(`${name} park is ${age} years old.`);
